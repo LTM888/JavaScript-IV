@@ -24,7 +24,7 @@ class Instructor extends Person {
         return `Today we are learning about ${subject} `;
     }
 
-    grade(student name,subject) {
+    grade(student name, subject) {
         `${student.name} receives a perfect score on ${subject}`
     }
 }
