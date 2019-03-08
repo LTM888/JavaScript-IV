@@ -8,7 +8,7 @@ class Person {
     }
 
     speak() {
-        return `Hello my name is Fred, I am from Bedrock where ${this.name} and ${this.location} are object's own props`;
+        return `Hello my name is ${this.name}, I am from ${this.location}.`;
     }
 }
 
@@ -20,29 +20,29 @@ class Instructor extends Person {
         this.catchPhrase = instructorDna.catchPhrase;
     }
 
-    demo() {
-        return `Today we are learning about ${subject}`;
+    demo(subject) {
+        return `Today we are learning about ${subject} `;
     }
 
-    grade() {
-        return `${student.name} receives a perfect score on ${subject}`;
+    grade(student name,subject) {
+        `${student.name} receives a perfect score on ${subject}`
     }
 }
 
-class Student extends Person{
+class Student extends Person {
     constructor(studentdna) {
-        super(studentdna)
-        this.PreviousBackground = studentdna.previousBackground;
-        this.ClassName = studentdna.className;
-        this.FavSubjects = studentdna.favSubjects;
+        super(studentdna);
+        this.previousBackground = studentdna.previousBackground;
+        this.className = studentdna.className;
+        this.favSubjects = studentdna.favSubjects;
     }
 
     listsSubjects() {
         return `${this.subject}`;
     }
 
-    prAssignment(){
-        return  `${this.name} has submitted a PR for ${this.subject}`;
+    prAssignment() {
+        return `${this.name} has submitted a PR for ${this.subject}`;
     }
 
     sprintChallenge() {
@@ -55,7 +55,7 @@ class ProjectManager extends Instructor {
         super(pmDna)
         this.gradClassName = pmDna.gradClassName;
         this.favInstructor = pmDna.favInstructor;
-}
+    }
     debugsCode() {
         return `${this.name} debugs ${student.name}'s code on ${this.subject}`
     }
@@ -72,7 +72,7 @@ const fred = new Instructor({
     catchPhrase: `Don't forget the homies`
 });
 
-const jane = new Student ({
+const jane = new Student({
     name: 'Jane',
     location: 'out west',
     age: 24,
@@ -81,7 +81,7 @@ const jane = new Student ({
     className: 'web18',
     favSubjects: 'Math',
 
-})
+});
 
 const ed = new ProjectManager({
     name: 'ed',
@@ -91,17 +91,17 @@ const ed = new ProjectManager({
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`,
-    gradClassName:'web18',
+    gradClassName: 'web18',
     favInstructor: 'Sean',
 });
 
 console.log(ed.speak());
-console.log(demo());
-console.log(grade());
+console.log(fred.demo('Math'));
+console.log(grade('Jain', "Math"));
 console.log(listsSubjects());
 console.log(prAssignment());
 console.log(sprintChallenge());
 console.log(ed.debugsCode());
-console.log(fred);
+console.log(fred.demo());
 console.log(jane);
 console.log(ed);
